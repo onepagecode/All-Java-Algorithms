@@ -17,8 +17,26 @@ public class SelectionSort {
                 if (arr[j] < arr[minimum_index])
                     minimum_index = j;
 
-                int
+                int temp = arr[minimum_index];
+                arr[minimum_index] = arr[i];
+                arr[i] = temp;
+
 
         }
+    }
+
+    void ArrayDisplay(int arr[]) {
+        int array2 = arr.length;
+        for (int i = 0; i < array2; ++i)
+            System.out.println(arr[i] + " ");
+        System.out.println();
+    }
+
+    public static void main(String args[]) {
+        SelectionSort ob = new SelectionSort();
+        int arr[] = {2,4,3,5,1};
+        ob.sort(arr);
+        System.out.println("The sorted array is: ");
+        ob.ArrayDisplay(arr);
     }
 }
